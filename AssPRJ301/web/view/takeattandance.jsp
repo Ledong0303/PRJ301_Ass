@@ -16,7 +16,7 @@
     <body>
         ${requestScope.ses.id}, class: ${requestScope.ses.group.name} 
         <br/>
-        Subject: ${requestScope.ses.group.subject.name}
+        Subject: $ {requestScope.ses.group.subject.name}
         Room: ${requestScope.ses.room.name}, Time: ${requestScope.ses.date} ${requestScope.ses.timeslot.description}
         <br/>
         Attended: ${requestScope.ses.attanded?"Yes":"No"}

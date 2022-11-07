@@ -68,7 +68,6 @@ public class TakeAttandanceController extends HttpServlet {
             throws ServletException, IOException {
         Session ses = new Session();
         ses.setId(Integer.parseInt(request.getParameter("sesid")));
-
         String[] stdids = request.getParameterValues("stdid");
         for (String stdid : stdids) {
             Attandance a = new Attandance();
