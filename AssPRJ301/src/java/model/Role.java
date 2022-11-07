@@ -14,6 +14,9 @@ public class Role {
     private int id;
     private String name;
     private ArrayList<Account> accounts = new ArrayList<>();
+
+    public Role() {
+    }
     
 
     public Role(int id, String name) {

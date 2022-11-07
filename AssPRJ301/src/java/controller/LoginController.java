@@ -37,7 +37,7 @@ public class LoginController extends HttpServlet {
          if(session.getAttribute("account")!=null){
              response.sendRedirect("home");
          }
-        request.getRequestDispatcher("./view/login.jsp").forward(request, response);
+        request.getRequestDispatcher("/login.jsp").forward(request, response);
     }
 
     /**
@@ -78,8 +78,7 @@ public class LoginController extends HttpServlet {
             response.addCookie(username);
             response.addCookie(password);
             response.addCookie(rem);
-            request.getSession().setAttribute("account", account);
-            response.sendRedirect("home");
+            response.sendRedirect("timetable");
     }
  
 }
