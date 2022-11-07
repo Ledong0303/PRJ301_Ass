@@ -37,7 +37,7 @@ public class LoginController extends HttpServlet {
          if(session.getAttribute("account")!=null){
              response.sendRedirect("home");
          }
-        request.getRequestDispatcher("/login.jsp").forward(request, response);
+        request.getRequestDispatcher("view/login.jsp").forward(request, response);
     }
 
     /**
