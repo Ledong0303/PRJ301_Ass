@@ -77,7 +77,7 @@ public class LoginController extends HttpServlet {
             response.addCookie(username);
             response.addCookie(password);
             response.addCookie(rem);
-            response.sendRedirect("timetable");
+            response.sendRedirect("home");
     }
  
 }
