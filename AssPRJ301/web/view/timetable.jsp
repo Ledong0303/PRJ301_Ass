@@ -21,7 +21,7 @@
             To: <input type="date" name="to" value="${requestScope.to}"/>
             <input type="submit" value="View"/> 
         </form>
-        <table border="1px">
+            <table border="1px" style="background-color: lightblue">
             <tr>
                 <td> </td>
                 <c:forEach items="${requestScope.dates}" var="d">
@@ -30,9 +30,9 @@
             </tr>
             <c:forEach items="${requestScope.slots}" var="slot">
                 <tr>
-                    <td>${slot.description}</td>
+                    <td>Slot:${slot.id} <br/>${slot.description}</td>
                     <c:forEach items="${requestScope.dates}" var="d">
-                        <td>
+                        <td>    
                             <c:forEach items="${requestScope.sessions}" var="ses">
                                 <c:if test="${helper.compare(ses.date,d) eq 0 and (ses.timeslot.id eq slot.id)}">
                                     <a href="att?id=${ses.id}">${ses.group.name}-${ses.group.subject.name}</a>
