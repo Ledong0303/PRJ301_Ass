@@ -9,7 +9,7 @@ import javax.management.relation.Role;
 
 /**
  *
- * @author bacht
+ * @author x
  */
 public class Account {
     private String username;

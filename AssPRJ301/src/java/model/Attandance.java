@@ -6,7 +6,7 @@ package model;
 
 /**
  *
- * @author bacht
+ * @author x
  */
 public class Attandance {
     private Student student;

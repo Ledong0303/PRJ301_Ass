@@ -1,7 +1,7 @@
 <%-- 
     Document   : timetable
     Created on : Oct 17, 2022, 8:42:14 AM
-    Author     : bacht
+    Author     : x
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

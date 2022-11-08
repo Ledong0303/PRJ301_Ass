@@ -49,7 +49,7 @@ public class TakeAttandanceController extends HttpServlet {
             request.setAttribute("ses", ses);
             request.getRequestDispatcher("view/takeattandance.jsp").forward(request, response);
         } catch (Exception e) {
-            System.out.println("ngu");
+            System.out.println("error");
         }
 //        if(DateTimeHelper.getDaystoCurrent(ses.getDate())>=2)
 //            response.getWriter().println("this session is out of date");

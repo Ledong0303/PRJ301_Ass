@@ -8,14 +8,14 @@ import java.util.ArrayList;
 
 /**
  *
- * @author bacht
+ * @author x
  */
 public class Student {
     private int id;
     private String name;
     private ArrayList<Group> groups = new ArrayList<>();
     private ArrayList<Attandance> atts = new ArrayList<>();
-    private ArrayList<Role> roles = new ArrayList<>();
+   
 
     public Student(int id, String name) {
         this.id = id;

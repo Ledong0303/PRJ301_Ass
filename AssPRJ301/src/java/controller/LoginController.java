@@ -16,7 +16,7 @@ import model.Account;
 
 /**
  *
- * @author bacht
+ * @author x
  */
 public class LoginController extends HttpServlet {
     
@@ -62,7 +62,6 @@ public class LoginController extends HttpServlet {
         }
         if (account != null) {
             request.getSession().setAttribute("account", account);
-            request.getSession().setAttribute("roles", db.getRoles(account.getUsername()));
             Cookie username = new Cookie("user", user);
             Cookie password = new Cookie("pass", pass);
             Cookie rem = new Cookie("remember", r);

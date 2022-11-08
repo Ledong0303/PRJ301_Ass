@@ -21,7 +21,7 @@ import model.TimeSlot;
 
 /**
  *
- * @author bacht
+ * @author x
  */
 public class SessionDBContext extends DBContext<Session> {
     public ArrayList<Session> filter(int lid, Date from, Date to) {

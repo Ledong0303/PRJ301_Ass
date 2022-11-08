@@ -9,7 +9,7 @@ import java.sql.Date;
 
 /**
  *
- * @author bacht
+ * @author x
  */
 public class Session {
     private int id;

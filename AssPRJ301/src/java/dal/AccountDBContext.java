@@ -11,11 +11,11 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Account;
-import model.Role;
+
 
 /**
  *
- * @author bacht
+ * @author x
  */
 public class AccountDBContext extends DBContext<Account> {
 
@@ -39,27 +39,7 @@ public class AccountDBContext extends DBContext<Account> {
         return null;
     }
 
-    public ArrayList<Role> getRoles(String username) {
-        try {
-            String sql = "SELECT [rid]\n"
-                    + "      ,[username]\n"
-                    + "  FROM [Role_Account] where [username]=?";
-            ArrayList<Role> roles = new ArrayList<>();
-            PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setString(1, username);
-
-            ResultSet rs = stm.executeQuery();
-
-            while (rs.next()) {
-                roles.add(new Role(rs.getInt("rid"), rs.getString("username")));
-            }
-            return roles;
-        } catch (SQLException ex) {
-            Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
-    }
-
+   
     @Override
     public void insert(Account model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

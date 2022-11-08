@@ -13,16 +13,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <c:if test="${sessionScope.account ne null}">
-            Hello ${sessionScope.account.displayname}, click
-            <a href="Logout">here</a> to logout.
-        </c:if>
+       
             <c:if test="${sessionScope.account eq null}">
             click
             <a href="login">here</a> to login.
         </c:if>
             <br/>
             <a href="timetable?lid=1">Timetable</a> <br/>
-            <a href="takeattandance?id=1">Take attendance</a>
+            <a href="takeatt?id=1">Take attendance</a>
     </body>
 </html>

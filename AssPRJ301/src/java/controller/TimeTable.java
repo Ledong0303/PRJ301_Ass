@@ -22,7 +22,7 @@ import util.DateTimeHelper;
 
 /**
  *
- * @author bacht
+ * @author x
  */
 public class TimeTable extends HttpServlet {
 

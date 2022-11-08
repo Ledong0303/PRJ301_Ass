@@ -14,7 +14,7 @@ import model.Lecturer;
 
 /**
  *
- * @author bacht
+ * @author x
  */
 public class LecturerDBContext extends DBContext<Lecturer> {
 
