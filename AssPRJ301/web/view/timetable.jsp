@@ -21,31 +21,35 @@
             To: <input type="date" name="to" value="${requestScope.to}"/>
             <input type="submit" value="View"/> 
         </form>
-            <table border="1px" style="background-color: lightblue">
-            <tr>
+        <table border="1px" style="width: 100%">
+            <tr style="background-color: #6666ff">
                 <td> </td>
                 <c:forEach items="${requestScope.dates}" var="d">
                     <td>${d}<br/>${helper.getDayNameofWeek(d)}</td>
                     </c:forEach>
             </tr>
             <c:forEach items="${requestScope.slots}" var="slot">
-                <tr>
+                <tr style="background-color:lightblue">
                     <td>Slot:${slot.id} <br/>${slot.description}</td>
-                    <c:forEach items="${requestScope.dates}" var="d">
+                        <c:forEach items="${requestScope.dates}" var="d">
                         <td>    
                             <c:forEach items="${requestScope.sessions}" var="ses">
                                 <c:if test="${helper.compare(ses.date,d) eq 0 and (ses.timeslot.id eq slot.id)}">
                                     <a href="att?id=${ses.id}">${ses.group.name}-${ses.group.subject.name}</a>
                                     <br/>
-                                    ${ses.room.name}
-                                    <c:if test="${ses.attandated}">
-                                        <img src="../img/male-icon.png" alt=""/>
+                                    at ${ses.room.name}
+                                    <c:if test="${ses.attanded}">
+                                        <a>
+                                            <br>(<font color="green">attended</font>)
+                                        </a>
                                     </c:if>
-                                    <c:if test="${!ses.attandated}">
-                                        <img src="../img/female-icon.png" alt=""/>
+                                    <c:if test="${!ses.attanded}">
+                                        <a>
+                                            <br>(<font color="red">absent</font>)
+                                        </a>
                                     </c:if>
                                 </c:if>
-                                  
+
                             </c:forEach>
                         </td>
                     </c:forEach>
