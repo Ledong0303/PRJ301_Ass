@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -116,6 +118,7 @@ body {
         <form action="login" method="post">
             Username:<input type="text" name="username"/><br/>
             Password:<input type="text" name="password"><br/> 
+            ${usernamemess}<br/>
             <input type="submit" name="Login"/>
         </form>
     </body>

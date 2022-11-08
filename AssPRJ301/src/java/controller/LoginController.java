@@ -51,14 +51,16 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         String user = request.getParameter("username");
+        try {
+             String user = request.getParameter("username");
         String pass = request.getParameter("password");
         String r = request.getParameter("remember");
         AccountDBContext db = new AccountDBContext();
         Account account = db.get(user, pass);
         
         if (account == null) {
-            response.getWriter().println("login failed!");            
+            request.getRequestDispatcher("view/login.jsp").forward(request, response);
+//            response.getWriter().println("login failed!");            
         }
         if (account != null) {
             request.getSession().setAttribute("account", account);
@@ -79,6 +81,9 @@ public class LoginController extends HttpServlet {
             response.addCookie(rem);
             response.sendRedirect("home");
     }
+        } catch (IOException e) {
+        }
+        
  
 }
 }

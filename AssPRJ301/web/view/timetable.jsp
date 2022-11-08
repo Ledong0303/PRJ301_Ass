@@ -38,7 +38,7 @@
                                     <a href="att?id=${ses.id}">${ses.group.name}-${ses.group.subject.name}</a>
                                     <br/>
                                     at ${ses.room.name}
-                                    <c:if test="${ses.attanded}">
+                                    <c:if test="${ses.attanded}">   
                                         <a>
                                             <br>(<font color="green">attended</font>)
                                         </a>
