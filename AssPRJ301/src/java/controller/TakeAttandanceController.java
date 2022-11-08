@@ -19,7 +19,7 @@ import model.Student;
 
 /**
  *
- * @author bacht
+ * @author x
  */
 public class TakeAttandanceController extends HttpServlet {
 
@@ -39,20 +39,24 @@ public class TakeAttandanceController extends HttpServlet {
         try {
             sesid = Integer.parseInt(request.getParameter("id"));
             AttandanceDBContext attDB = new AttandanceDBContext();
+            
             ArrayList<Attandance> atts = attDB.getAttsBySessionId(sesid);
+           
             request.setAttribute("atts", atts);
 
             SessionDBContext sesDB = new SessionDBContext();
             Session ses = sesDB.get(sesid);
             request.setAttribute("ses", ses);
+            request.getRequestDispatcher("view/takeattandance.jsp").forward(request, response);
         } catch (Exception e) {
+            System.out.println("ngu");
         }
 //        if(DateTimeHelper.getDaystoCurrent(ses.getDate())>=2)
 //            response.getWriter().println("this session is out of date");
 //        else if(DateTimeHelper.getDaystoCurrent(ses.getDate())< 0)
 //            response.getWriter().println("this session is not yet started");
 //        else
-        request.getRequestDispatcher("view/takeattandance.jsp").forward(request, response);
+
     }
 
     /**
@@ -79,7 +83,6 @@ public class TakeAttandanceController extends HttpServlet {
             a.setDescription(request.getParameter("description" + stdid));
             ses.getAttandances().add(a);
         }
-
         SessionDBContext db = new SessionDBContext();
         db.updateAttandance(ses);
         response.sendRedirect("takeatt?id=" + ses.getId());

@@ -51,6 +51,7 @@ public class AttandanceDBContext extends DBContext<Attandance> {
             }
         } catch (SQLException ex) {
             Logger.getLogger(AttandanceDBContext.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("error getAttsBySessionId");
         }
         return atts;
     }

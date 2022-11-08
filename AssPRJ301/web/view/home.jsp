@@ -1,7 +1,7 @@
 <%-- 
     Document   : home
     Created on : Nov 2, 2022, 1:25:40 PM
-    Author     : bacht
+    Author     : x
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -23,6 +23,6 @@
         </c:if>
             <br/>
             <a href="timetable?lid=1">Timetable</a> <br/>
-            <a href="takeattandance?id=1">Take attandance</a>
+            <a href="takeattandance?id=1">Take attendance</a>
     </body>
 </html>
